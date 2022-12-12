@@ -16,7 +16,13 @@ function PhotosContextProvider({ children }) {
     setCart((oldCart) => [...oldCart, photo]);
   }
 
-  return <PhotosContext.Provider value={{ photos, cart, addToCart }}>{children}</PhotosContext.Provider>;
+  function removeFromCart(clickedPhoto) {
+    setCart((oldCart) => oldCart.filter((photo) => photo.id !== clickedPhoto.id));
+  }
+
+  return (
+    <PhotosContext.Provider value={{ photos, cart, addToCart, removeFromCart }}>{children}</PhotosContext.Provider>
+  );
 }
 
 export { PhotosContext, PhotosContextProvider };

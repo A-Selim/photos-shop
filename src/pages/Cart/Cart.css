@@ -8,11 +8,22 @@ p {
   margin: 3em 5em;
 }
 
+.cart-empty {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .cart-item {
   display: flex;
   align-items: center;
   padding: 1em 2em;
   border-bottom: 1px solid gray;
+}
+
+.delete-icon {
+  font-size: 1.3rem;
+  margin-right: 0.7em;
+  cursor: pointer;
 }
 
 .photo-thumbnail {
@@ -24,12 +35,16 @@ p {
 }
 
 .price {
-  font-size: 1.5em;
+  font-size: 1.4rem;
   margin-left: auto;
 }
 
-.delete-icon {
-  font-size: 1.3rem;
-  margin-right: 0.7em;
-  cursor: pointer;
+.total {
+  font-size: 1.7rem;
+  margin-top: 0.7em;
+  margin-left: auto;
+}
+
+.total-sum {
+  margin: 0 1em;
 }
