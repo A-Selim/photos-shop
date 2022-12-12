@@ -1,0 +1,35 @@
+p {
+  margin: 0;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3em 5em;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+  border-bottom: 1px solid gray;
+}
+
+.photo-thumbnail {
+  width: 10%;
+}
+
+.photo-thumbnail > img {
+  width: 100%;
+}
+
+.price {
+  font-size: 1.5em;
+  margin-left: auto;
+}
+
+.delete-icon {
+  font-size: 1.3rem;
+  margin-right: 0.7em;
+  cursor: pointer;
+}

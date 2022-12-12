@@ -35,11 +35,39 @@ body {
 .photo {
   width: 15%;
   height: 20%;
-  cursor: pointer;
+  position: relative;
 }
 
 .photo > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.heart-icon,
+.cart-icon {
+  display: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 8px;
+  cursor: pointer;
+}
+
+.heart-icon {
+  left: 8px;
+  color: #ff0000;
+}
+
+.heart-icon.ri-heart-fill {
+  display: block;
+}
+
+.cart-icon {
+  right: 8px;
+  color: rgb(4, 255, 4);
+}
+
+.photo:hover .heart-icon,
+.photo:hover .cart-icon {
+  display: block;
 }

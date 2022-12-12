@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Photos from "./pages/Photos";
-import Cart from "./pages/Cart";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   return (
