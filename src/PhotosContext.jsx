@@ -12,8 +12,14 @@ function PhotosContextProvider({ children }) {
       .then((data) => setPhotos(data));
   }, []);
 
-  function addToCart(photo) {
-    setCart((oldCart) => [...oldCart, photo]);
+  function toggleFavorite(clickedPhoto) {
+    setPhotos((oldPhotos) =>
+      oldPhotos.map((photo) => (photo.id === clickedPhoto.id ? { ...photo, isFavorite: !photo.isFavorite } : photo))
+    );
+  }
+
+  function addToCart(clickedPhoto) {
+    setCart((oldCart) => [...oldCart, clickedPhoto]);
   }
 
   function removeFromCart(clickedPhoto) {
@@ -21,7 +27,9 @@ function PhotosContextProvider({ children }) {
   }
 
   return (
-    <PhotosContext.Provider value={{ photos, cart, addToCart, removeFromCart }}>{children}</PhotosContext.Provider>
+    <PhotosContext.Provider value={{ photos, cart, toggleFavorite, addToCart, removeFromCart }}>
+      {children}
+    </PhotosContext.Provider>
   );
 }
 
