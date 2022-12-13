@@ -58,7 +58,8 @@ body {
   color: #ff0000;
 }
 
-.heart-icon.ri-heart-fill {
+.heart-icon.ri-heart-fill,
+.cart-icon.ri-shopping-cart-2-fill {
   display: block;
 }
 

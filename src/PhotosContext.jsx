@@ -19,7 +19,13 @@ function PhotosContextProvider({ children }) {
   }
 
   function addToCart(clickedPhoto) {
-    setCart((oldCart) => [...oldCart, clickedPhoto]);
+    const alreadyInCart = cart.find((item) => item.id === clickedPhoto.id);
+
+    if (alreadyInCart === undefined) {
+      setCart((oldCart) => [...oldCart, clickedPhoto]);
+    } else {
+      removeFromCart(clickedPhoto);
+    }
   }
 
   function removeFromCart(clickedPhoto) {

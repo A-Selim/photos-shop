@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { PhotosContext } from "../PhotosContext";
 
 export default function Photos() {
@@ -10,6 +10,9 @@ export default function Photos() {
         className={`heart-icon ri-heart-${photo.isFavorite ? "fill" : "line"}`}
         onClick={() => toggleFavorite(photo)}
       ></i>
+      <i
+        className={`cart-icon ri-shopping-cart-2-${cart.find((item) => item.id === photo.id) ? "fill" : "line"}`}
+        onClick={() => addToCart(photo)}
       ></i>
       <img src={photo.url} />
     </div>
