@@ -11,7 +11,12 @@ export default function Cart() {
   const cartElements = cart.map((photo) => {
     return (
       <div key={photo.id} className="cart-item">
-        <i className="delete-icon ri-delete-bin-6-line" onClick={() => removeFromCart(photo)}></i>
+        <i
+          className="delete-icon ri-delete-bin-6-line"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => removeFromCart(photo)}
+        ></i>
         <div className="photo-thumbnail">
           <img src={photo.url} />
         </div>
@@ -19,6 +24,14 @@ export default function Cart() {
       </div>
     );
   });
+
+  function handleMouseEnter(event) {
+    event.target.className = "delete-icon ri-delete-bin-6-fill";
+  }
+
+  function handleMouseLeave(event) {
+    event.target.className = "delete-icon ri-delete-bin-6-line";
+  }
 
   function placeOrder() {
     setIsOrdered(true);
