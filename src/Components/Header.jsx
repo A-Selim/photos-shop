@@ -11,7 +11,9 @@ export default function Header() {
         Photos
       </Link>
       <Link to="/cart" className="page-link">
-        <i className={`cart-icon-header ri-shopping-cart-2-${cart.length > 0 ? "fill" : "line"}`}></i>
+        <i className={`cart-icon-header ri-shopping-cart-2-${cart.length > 0 ? "fill" : "line"}`}>
+          <span className="cart-items-count">{!!cart.length && cart.length}</span>
+        </i>
       </Link>
     </nav>
   );
