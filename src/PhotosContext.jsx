@@ -33,7 +33,7 @@ function PhotosContextProvider({ children }) {
   }
 
   return (
-    <PhotosContext.Provider value={{ photos, cart, toggleFavorite, addToCart, removeFromCart }}>
+    <PhotosContext.Provider value={{ photos, cart, setCart, toggleFavorite, addToCart, removeFromCart }}>
       {children}
     </PhotosContext.Provider>
   );
